@@ -8,9 +8,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 local plugins = {
-    {'wbthomason/packer.nvim'},
-    {'numToStr/Comment.nvim', config = function() require'Comment'.setup() end},
-    {
+    {'wbthomason/packer.nvim'}, {
         "ur4ltz/surround.nvim",
         event = "BufRead",
         config = function()
