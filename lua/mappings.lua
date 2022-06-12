@@ -6,8 +6,5 @@ map("n", "<C-l>", ":call VSCodeNotify('workbench.action.navigateRight')<CR>")
 map("n", "<C-w>_",
     ":<C-u>call VSCodeNotify('workbench.action.toggleEditorWidths')<CR>")
 map("n", "<Space>", ":call VSCodeNotify('whichkey.show')<CR>")
-map("v", "<Space>/",
-    "<esc><cmd>lua require('Comment.api').toggle_linewise_op(vim.fn.visualmode())<cr>",
-    {desc = "Toggle comment line"})
 map("n", "f", ":HopChar1CurrentLine<cr>")
 map("n", "F", ":HopChar1<cr>")
