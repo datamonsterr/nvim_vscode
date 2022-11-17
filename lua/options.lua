@@ -9,3 +9,5 @@ set.writebackup = false
 set.updatetime = 300
 set.timeoutlen = 300
 set.incsearch = true
+set.undofile = true
+set.writebackup = false

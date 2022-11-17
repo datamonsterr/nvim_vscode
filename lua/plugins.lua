@@ -1,18 +1,24 @@
-local fn = vim.fn
-local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
-if fn.empty(fn.glob(install_path)) > 0 then
-    packer_bootstrap = fn.system({
-        'git', 'clone', '--depth', '1',
-        'https://github.com/wbthomason/packer.nvim', install_path
-    })
+local dir = "C:/Neovim/share"
+
+local ensure_packer = function()
+    local fn = vim.fn
+    local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+    if fn.empty(fn.glob(install_path)) > 0 then
+        fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
+        vim.cmd [[packadd packer.nvim]]
+        return true
+    end
+    return false
 end
 
+local packer_bootstrap = ensure_packer()
+
 local plugins = {
-    {'wbthomason/packer.nvim'}, {
+    { 'wbthomason/packer.nvim' }, {
         "ur4ltz/surround.nvim",
         event = "BufRead",
         config = function()
-            require("surround").setup {mappings_style = "surround"}
+            require("surround").setup { mappings_style = "surround" }
         end
     }, {
         "phaazon/hop.nvim",
@@ -24,9 +30,14 @@ local plugins = {
 }
 
 -- configure plugins
-require('packer').startup(function(use)
-    for _, plugin in pairs(plugins) do use(plugin) end
+require('packer').startup {
+    function(use)
+        for _, plugin in pairs(plugins) do use(plugin) end
+        -- Put this at the end after all plugins
+        if packer_bootstrap then require('packer').sync() end
+    end,
 
-    -- Put this at the end after all plugins
-    if packer_bootstrap then require('packer').sync() end
-end)
+    config = {
+        compile_path = "C:/Neovim/nvim/plugin/packer_compiled.lua",
+    }
+}
