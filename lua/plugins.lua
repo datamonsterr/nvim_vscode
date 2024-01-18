@@ -1,4 +1,4 @@
-local dir = "C:/Neovim/share"
+local dir = "~/.local/share"
 
 local ensure_packer = function()
     local fn = vim.fn
@@ -15,17 +15,17 @@ local packer_bootstrap = ensure_packer()
 
 local plugins = {
     { 'wbthomason/packer.nvim' }, {
-        "ur4ltz/surround.nvim",
-        event = "BufRead",
-        config = function()
-            require("surround").setup { mappings_style = "surround" }
-        end
-    }, {
-        "phaazon/hop.nvim",
-        branch = "v1", -- optional but strongly recommended
-        event = "BufRead", -- I want to use it all the time
-        config = function() require("hop").setup() end
-    }
+    "ur4ltz/surround.nvim",
+    event = "BufRead",
+    config = function()
+        require("surround").setup { mappings_style = "surround" }
+    end
+}, {
+    "phaazon/hop.nvim",
+    branch = "v1",     -- optional but strongly recommended
+    event = "BufRead", -- I want to use it all the time
+    config = function() require("hop").setup() end
+}
 
 }
 
