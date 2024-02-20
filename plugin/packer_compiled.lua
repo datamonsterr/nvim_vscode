@@ -79,12 +79,12 @@ _G.packer_plugins = {
     loaded = false,
     needs_bufread = false,
     only_cond = false,
-    path = "C:\\Users\\phamd\\.local\\share\\nvim\\site\\pack\\packer\\opt\\hop.nvim",
+    path = "C:\\Users\\phamd\\AppData\\Local\\nvim-vscode-data\\site\\pack\\packer\\opt\\hop.nvim",
     url = "https://github.com/phaazon/hop.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
-    path = "C:\\Users\\phamd\\.local\\share\\nvim\\site\\pack\\packer\\start\\packer.nvim",
+    path = "C:\\Users\\phamd\\AppData\\Local\\nvim-vscode-data\\site\\pack\\packer\\start\\packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
   ["surround.nvim"] = {
@@ -92,7 +92,7 @@ _G.packer_plugins = {
     loaded = false,
     needs_bufread = false,
     only_cond = false,
-    path = "C:\\Users\\phamd\\.local\\share\\nvim\\site\\pack\\packer\\opt\\surround.nvim",
+    path = "C:\\Users\\phamd\\AppData\\Local\\nvim-vscode-data\\site\\pack\\packer\\opt\\surround.nvim",
     url = "https://github.com/ur4ltz/surround.nvim"
   }
 }
@@ -102,7 +102,7 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au BufRead * ++once lua require("packer.load")({'hop.nvim', 'surround.nvim'}, { event = "BufRead *" }, _G.packer_plugins)]]
+vim.cmd [[au BufRead * ++once lua require("packer.load")({'surround.nvim', 'hop.nvim'}, { event = "BufRead *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 
