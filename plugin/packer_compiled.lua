@@ -79,12 +79,12 @@ _G.packer_plugins = {
     loaded = false,
     needs_bufread = false,
     only_cond = false,
-    path = "C:\\Users\\phamd\\AppData\\Local\\nvim-vscode-data\\site\\pack\\packer\\opt\\hop.nvim",
+    path = "C:\\Users\\phamd\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\hop.nvim",
     url = "https://github.com/phaazon/hop.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
-    path = "C:\\Users\\phamd\\AppData\\Local\\nvim-vscode-data\\site\\pack\\packer\\start\\packer.nvim",
+    path = "C:\\Users\\phamd\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
   ["surround.nvim"] = {
@@ -92,7 +92,7 @@ _G.packer_plugins = {
     loaded = false,
     needs_bufread = false,
     only_cond = false,
-    path = "C:\\Users\\phamd\\AppData\\Local\\nvim-vscode-data\\site\\pack\\packer\\opt\\surround.nvim",
+    path = "C:\\Users\\phamd\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\surround.nvim",
     url = "https://github.com/ur4ltz/surround.nvim"
   }
 }
